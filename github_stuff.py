@@ -51,7 +51,7 @@ def _download_gh_file(gh_file: ContentFile, target_path: str = os.getcwd(),
     print(' '.join(['' for i in range(len(download_str)+1)]), end="\r") # clear last line
     print(f"Done. | {os.path.join(target_path, target_file)}")
 
-def download_files_gh(repo: str | Repository, source: str | list[str] = "", target:str= os.getcwd(),
+def download_files_gh(repo: str, source: str | list[str] = "", target:str= os.getcwd(),
                  exclude_files: str | list[str] = [], exclude_dirs: str | list[str] = []) -> list[ContentFile]:
     if type(repo) == str: # get repo if needed
         with Github() as gh: repo = gh.get_repo(repo)
